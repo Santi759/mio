@@ -1,0 +1,43 @@
+from funciones import num_dni, long_word, carnet_id, multiple
+import pytest
+
+@pytest.mark.parametrize("input_dni, resul",
+    [
+        ("45140981","45140981"),
+        ("1234567","1234567") 
+])
+def test_num_dni(input_dni,resul):
+    assert num_dni(input_dni)==resul
+
+@pytest.mark.parametrize(
+        "input_word, result",
+        [
+            ("hola",4),
+            ("caballero",9),
+            ("fisio",5)
+
+])
+def test_long_word(input_word,result):
+    assert long_word(input_word)==result
+
+@pytest.mark.parametrize(
+    "name, ret, expected_full_name, expected_id", 
+    [
+    ("Santiago Andrés Chepilla", "45140981", "Santiago Andrés Chepilla", "Santiago8451"),
+    ("Burrito Ortega", "1234567", "Burrito Ortega", "Burrito6123"),
+    ("Nicki Nicole", "44625801", "Nicki Nicole", "Nicki6446")
+])
+def test_carnet_id(name, ret, expected_full_name, expected_id):
+    full_name, id = carnet_id(name, ret)
+    assert full_name == expected_full_name
+    assert id == expected_id
+
+@pytest.mark.parametrize(
+    "num_1,num_2,result",
+    [
+        (15,3,0),
+        (10,2,0),
+        (12,4,0)
+    ])
+def test_multiple(num_1,num_2,result):
+    assert multiple(num_1,num_2)==result    
