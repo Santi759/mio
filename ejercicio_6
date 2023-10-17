@@ -1,0 +1,95 @@
+
+def add_num(list_num):
+    while True:
+        num=float(input("Ingrese un nùmero. Ingrese el 0 para salir: "))
+        if num==0:
+            break
+        list_num.append(num)
+
+def list_new(list_num,number):
+    filtered_list = [x for x in list_num if x<number]
+    return filtered_list
+
+def generate_frequency_list(list_num):
+    list_tupples =[]
+    for num in list_num:
+        count = list_num.count(num)
+        # Verificar si la tupla ya existe en la lista
+        if (num, count) not in  list_tupples:
+             list_tupples.append((num, count))
+    return  list_tupples
+def add_list_primary(list_primary):
+    print("Ingrese los nombres de los alumnos de Primario")
+    while True:
+        name = input("Ingrese el nombre del alumno. Ingrese x para finalizar: ")
+        if name == "x" or name=="X":
+            break
+        list_primary.append(name)
+
+def add_list_secundary(list_secundary):
+    print("Ingrese los nombres de los alumnos de Secundario")
+    while True:
+        name = input("Ingrese el nombre del alumno. Ingrese x para finalizar: ")
+        if name == "x" or name=="X":
+            break
+        list_secundary.append(name)
+
+
+
+
+#Ejercicio_1
+#Solicitar al usuario que ingrese números, estos deben guardarse en una lista. 
+#Para finalizar el usuario debe ingresar 0, el cual no debe guardarse.
+
+list_num =[]
+add_num(list_num)
+print(list_num)
+
+#Ejercicio_2
+#A continuación, solicitar al usuario que ingrese un número y, 
+#si el número está en la lista, eliminar su primera ocurrencia. Mostrar un mensaje si no es posible eliminar.
+
+delete_num = float(input("Ingrese el nùmero que desea eliminar: "))
+if delete_num in list_num:
+    list_num.remove(delete_num)
+else:
+    print(f"No se encontro el numero {delete_num}")
+
+print(list_num)
+
+#Ejercicio_3
+#Imprimir la sumatoria de todos los números de la lista.
+print(sum(list_num))
+
+#Ejercicio_4
+#Solicitar al usuario otro número y crear una lista con los elementos de la lista original, 
+# que sean menores que el número dado. Imprimir esta nueva lista, iterando por ella.
+
+number = float(input("Ingrese un nùmero: "))
+filtered_list = list_new(list_num,number)
+for i in filtered_list:
+    print(i)
+print(filtered_list)
+
+#Ejercicio_5
+#Generar e imprimir una nueva lista que contenga como elementos a tuplas, cada una compuesta por 
+# un número de la lista original y la cantidad de veces que aparece en ella. Por ejemplo, 
+# si la lista original es [5,16,2,5,57,5,2], la nueva lista contendrá: [(5,3),(16,1),(2,2),(57,1)]
+
+frequency_list = generate_frequency_list(list_num)
+print("Nueva lista de tuplas (elemento, cantidad de veces que aparece):")
+print(frequency_list)
+
+#Ejercicio_6
+
+list_primary =[]
+list_secundary =[]
+
+list_name_primary= add_list_primary(list_primary)
+list_name_secundary= add_list_secundary(list_secundary)
+
+all_names =list(set(list_name_primary+list_name_secundary))
+print("Nombres de todos los alumnos sin repeticiones:")
+for name in all_names:
+    print(name)
+
