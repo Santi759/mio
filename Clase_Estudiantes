@@ -1,0 +1,14 @@
+public class Estudiantes {
+    private String Nombre;
+    private int edad;
+    private int Num_id;
+
+    public void init(String n, int e, int num){
+        Nombre=n;
+        edad=e;
+        Num_id=num;
+    }
+    public String datosEstu(){
+        return Nombre+" "+edad+" "+Num_id;
+    }
+}
