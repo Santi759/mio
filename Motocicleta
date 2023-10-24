@@ -1,0 +1,26 @@
+class Motorcycle:
+    condition="nuevas"
+    engine=False
+
+    def __init__(self,color=" ",license_plate=" ",fuel_liters=0, wheels_number=0,brand=" ",model=" ",fabrication_date="",top_speed=0,weight=0):
+        self.color= color
+        self.licence_plate=license_plate
+        self.fuel_liters=fuel_liters
+        self.wheels_number=wheels_number
+        self.brand=brand
+        self.model=model
+        self.fabrication_date=fabrication_date
+        self.top_speed=top_speed
+        self.weight=weight
+
+    def star_up(self,engine):
+        if not self.engine:
+            print("El motor ha arrancado")
+        else:
+            print("El motor ya estaba en marcha")
+    def stop(self,engine):
+        if self.engine:
+            print("El motor se ha detenido")
+        else:
+            print("El motor ya estaba detenido")
+        
