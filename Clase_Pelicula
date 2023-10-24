@@ -1,0 +1,13 @@
+public class Pelicula {
+    private String titulo;
+    private String autor;
+    private int duracion;
+    public void init(String tit, String aut, int min){
+        titulo = tit;
+        autor=aut;
+        duracion=min;
+    }
+    public String datosPeli(){
+        return "Evento: "+titulo+" Director:"+autor+" Duración: "+duracion+" min";
+    }
+}
