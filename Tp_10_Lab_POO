@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Main {
@@ -29,6 +28,56 @@ public class Main {
 
         System.out.println(estu1);
         System.out.println(estu2);
-        
-    }
-}
+
+        Libro l1 = new Libro();
+        l1.init("Harry Potter y la Piedra Filosofal","J.K. Rowling",1997);
+        Libro l2 = new Libro();
+        l2.init("Sherlock Holmes","Arthur Doyle",1887);
+
+        String book1= l1.datosLibro();
+        String book2= l2.datosLibro();
+
+        System.out.println(book1);
+        System.out.println(book2);
+
+        double ret;
+        CuentaBancaria CB = new CuentaBancaria();
+        CB.cuenta(15000,1234567);
+
+        String Cuenta= CB.datosCuenta();
+        System.out.println(Cuenta);
+
+        System.out.println("Ingrese el retiro");
+        double r= CB.ret();
+
+        double newSaldo= CB.Saldo();
+        System.out.println("Saldo Nuevo: "+newSaldo);
+
+        Rectangulo rec = new Rectangulo();
+        rec.init(3.5,6);
+
+        double Area = rec.area();
+        double Perimetro = rec.perimetro();
+        System.out.println("Area del rectangulo: "+Area);
+        System.out.println("Perimetro del Rectangulo: "+Perimetro);
+
+        Coche co = new Coche();
+        co.init("Chevrolet","Onix",2020);
+
+        System.out.println("A cuanto Acelera el coche?");
+        int aceleracion = co.aceleracion();
+        System.out.println("Cuantos km frenara?");
+        int frenos = co.frenos();
+        System.out.println("El coche se encuentra ahora a una velocidad de "+frenos+" km");
+
+        Pelicula peli= new Pelicula();
+        peli.init("oppenheimer","Christopher Nolan", 180);
+        String datos = peli.datosPeli();
+        System.out.println(datos);
+
+
+
+
+
+
+
