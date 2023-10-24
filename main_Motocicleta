@@ -1,0 +1,12 @@
+from Motorcycle import Motorcycle
+moto1=Motorcycle(
+    color="Rojo",
+    license_plate="15T2Y",
+    fuel_liters=30,
+    wheels_number=2
+    brand="Ducati",
+    model="DesertX",
+    fabrication_date="2020",
+    top_speed=220,
+    weight=180
+)
