@@ -97,3 +97,79 @@ class Triangle:
         else:
             print(f"El lado 3 es el mayor, mide {self.side_3}")
 
+
+
+class Contact:
+    def __init__(self, name, phone, email):
+        self.name = name
+        self.phone = phone
+        self.email = email
+
+class Diary:
+    def __init__(self):
+        self.contacts = []
+
+    def add_contact(self, name, phone, email):
+        new_contact = Contact(name, phone, email)
+        self.contacts.append(new_contact)
+
+    def list_of_contacts(self):
+        for contact in self.contacts:
+            print("------------")
+            print(f"Nombre: {contact.name}")
+            print(f"Teléfono: {contact.phone}")
+            print(f"Email: {contact.email}")
+            print("------------")
+
+    def search_contact(self, name):
+        for contact in self.contacts:
+            if contact.name == name:
+                print(f"Nombre: {contact.name}")
+                print(f"Teléfono: {contact.phone}")
+                print(f"Email: {contact.email}")
+                return
+        print("Contacto no encontrado")
+
+    def edit_contact(self, name, new_phone, new_email):
+        for contact in self.contacts:
+            if contact.name == name:
+                contact.phone = new_phone
+                contact.email = new_email
+                print("Contacto actualizado")
+                return
+        print("Contacto no encontrado")
+
+    def menu(self):
+        while True:
+            print("\nMenú de Agenda:")
+            print("1. Añadir contacto")
+            print("2. Lista de contactos")
+            print("3. Buscar contacto")
+            print("4. Editar contacto")
+            print("5. Cerrar agenda")
+            option = input("Selecciona una opción: ")
+
+            if option == "1":
+                name = input("Nombre: ")
+                phone = input("Teléfono: ")
+                email = input("Email: ")
+                self.add_contact(name, phone, email)
+            elif option == "2":
+                self.list_of_contacts()
+            elif option == "3":
+                name = input("Nombre a buscar: ")
+                self.search_contact(name)
+            elif option == "4":
+                name = input("Nombre a editar: ")
+                new_phone = input("Nuevo teléfono: ")
+                new_email = input("Nuevo email: ")
+                self.edit_contact(name, new_phone, new_email)
+            elif option == "5":
+                print("Agenda cerrada. ¡Hasta luego!")
+                break
+            else:
+                print("Opción no válida. Inténtalo de nuevo.")
+
+
+        
+
