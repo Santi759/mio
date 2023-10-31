@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.Collections;
 public class main {
     public static void main(String[] args){
         Scanner sc= new Scanner(System.in);
@@ -49,9 +51,41 @@ public class main {
         }
 
         //Ejercicio_7
+        int mayor=0;
         listaEnteros1.add(10);
         listaEnteros1.add(25);
         listaEnteros1.add(-3);
         listaEnteros1.add(6);
 
-        System.out.println(listaEnteros1.max());
+        for (int i=0;i<listaEnteros1.size();i++){
+            if (listaEnteros1.get(i)>mayor){
+                mayor=listaEnteros1.get(i);
+            }
+        }
+        System.out.println("El número mayor de la lista es: "+mayor);
+
+        //Ejercicio_8
+        Random random = new Random();
+        ArrayList<Integer> listaEnt = new ArrayList<>();
+        ArrayList<Integer> listaEnterosCopia = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            listaEnt.add(random.nextInt(100));
+        }
+        listaEnterosCopia.addAll(listaEnt);
+        // Tambien se puede usar {ArrayList<Integer> listaEnterosCopia = new ArrayList<>(listaEnt);} al crear la lista
+        System.out.println("Lista original: " + listaEnt);
+        System.out.println("Copia lista original: " + listaEnterosCopia);
+
+        //Ejercicio_9
+
+        Random random1 = new Random();
+        ArrayList<Integer> listaEnt2 = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            listaEnteros.add(random.nextInt(100));
+        }
+        System.out.println(listaEnteros);
+        Collections.reverse(listaEnteros);
+        System.out.println(listaEnteros);
+        
+    }
+        }
