@@ -1,4 +1,4 @@
-from Class_tp_9 import MyPerson,Account,Triangle
+from Class_tp_9 import MyPerson,Account,Triangle,Diary
 #Ejercicio_1
 
 
@@ -73,4 +73,5 @@ triangle_1.long_side()
 print("----------------------------------------------------------------------")
 
 #Ejercicio_4
-
+my_diary = Diary()
+my_diary.menu()
